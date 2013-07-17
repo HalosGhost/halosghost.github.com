@@ -4,6 +4,7 @@
 .. tags: 
 .. description: 
 .. date: 2013/07/17 14:37:09
+.. nocomments: True
 
 Having used various GNU/Linux distros for several years, I have a rather hefty set of `dotfiles <https://github.com/HalosGhost/.dotfiles>`_ which you are more than welcome to clone/copy/share/etc. I maintain a few packages for Arch Linux on the `AUR <https://aur.archlinux.org/packages/?SeB=m&K=HalosGhost>`_ and several others (including some works in-progress) on `GitHub <https://github.com/HalosGhost/Packages>`_. I also do a bit of editing and contribution, when I can, to the `Arch Wiki <https://wiki.archlinux.org>`_ and I am a moderator for the `Arch Linux Community <https://plus.google.com/communities/113935870359973712582>`_ on Google+.
 
