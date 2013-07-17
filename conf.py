@@ -349,7 +349,7 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 
 # Enable Addthis social buttons?
 # Defaults to true
-# ADD_THIS_BUTTONS = True
+ADD_THIS_BUTTONS = False
 
 # Hide link to source for the posts?
 # HIDE_SOURCELINK = False
