@@ -10,4 +10,4 @@ Having used various GNU/Linux distros for several years, I have a rather hefty s
 
 You can follow me on `Google+ <https://plus.google.com/102862389160032018687>`_ though I only post occasionally. And feel free to add me on `Steam <http://steamcommunity.com/id/HalosGhost>`_ (I won't accept blind invites; please message me first).
 
-This page will serve as a home base for whatever personal projects I am working on (and any professional ones should they ever overlap with the tech-focused paradigm of this site. I will do my best to keep it as up-to-date as possible, but I make no promises with respect to that. Eventually, who knows what it may become?
+This page will serve as a home base for whatever personal projects I am working on (and any professional ones should they ever overlap with the tech-focused paradigm of this site). I will do my best to keep it as up-to-date as possible, but I make no promises with respect to that. Eventually, who knows what it may become?
