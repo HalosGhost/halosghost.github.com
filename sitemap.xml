@@ -15,6 +15,16 @@
   <priority>0.5000</priority>
  </url>
  <url>
+  <loc>halosghost.github.com/halosghost.github.com/2013/07/</loc>
+  <lastmod>2013-07-18</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>halosghost.github.com/halosghost.github.com/2013/07/index.html</loc>
+  <lastmod>2013-07-18</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
   <loc>halosghost.github.com/halosghost.github.com/2013/index.html</loc>
   <lastmod>2013-07-18</lastmod>
   <priority>0.5000</priority>
@@ -31,16 +41,6 @@
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/categories/index.html</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/galleries/</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/galleries/index.html</loc>
   <lastmod>2013-07-18</lastmod>
   <priority>0.5000</priority>
  </url>
