@@ -6,52 +6,37 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>halosghost.github.com/halosghost.github.com/</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/2013/</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/2013/07/</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/2013/07/index.html</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/2013/index.html</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/archive.html</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/categories/</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/categories/index.html</loc>
-  <lastmod>2013-07-18</lastmod>
-  <priority>0.5000</priority>
- </url>
- <url>
-  <loc>halosghost.github.com/halosghost.github.com/index.html</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
   <loc>halosghost.github.com/halosghost.github.com/posts/an-introduction.html</loc>
-  <lastmod>2013-07-18</lastmod>
+  <lastmod>2013-07-20</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>halosghost.github.com/halosghost.github.com/posts/man-pages-a-how-to.html</loc>
+  <lastmod>2013-07-20</lastmod>
   <priority>0.5000</priority>
  </url>
 </urlset>
