@@ -63,6 +63,31 @@
     <div class="span8">
     
         <div class="postbox">
+        <h1><a href="posts/shaman-an-adventure-with-c.html">Shaman, an adventure with C</a>
+        <small>  
+             Posted: <time class="published" datetime="2013-08-29T19:30:44">2013-08-29 19:30</time>
+        </small></h1>
+        <hr>
+        <p>I have been proficient with scripting languages for a long while now, and once upon a time I knew something about Python (but that has long since been forgotten). Having switched to a very minimalist desktop environment (the whole thing with all my customizations is ~1500 sloc of C), and dealing with several C programs (along with having been made an <a class="reference external" href="https://github.com/TrilbyWhite/alopex.git">official contributor</a> to one of the projects written entirely in C), I felt it necessary for me to pick up one of the more universal languages and C seemed the obvious choice. I've messed around with a few small C programs as ways of getting my feet wet (i.e., <a class="reference external" href="https://github.com/HalosGhost/vulpes.git">vulpes</a>, <a class="reference external" href="https://github.com/HalosGhost/immio.git">immio</a>). However, a short while ago, I stumbled upon an awesome tool called <a class="reference external" href="http://darkhorse.nu/weatherman/">weatherman</a>, and it inspired me to begin working on an alternative written in C using the <a class="reference external" href="http://forecast.weather.gov">NOAA</a> as a backend rather than weatherbug.</p>
+<p>Thus was born, <a class="reference external" href="https://github.com/HalosGhost/shaman.git">shaman</a>. Originally, I really only wanted it to be able to fetch only the current conditions of a given location so that I could use it to display a relevant weather icon on my statusbar (using vulpes). But, as is the way with these projects, it evolved to also fetch temperature, and now, at the time of writing this post, <tt class="docutils literal">shaman</tt> is capable of fetching the following:</p>
+<ol class="arabic simple">
+<li>Reporter name, location and coordinates</li>
+<li>Rudimentary hazardous/severe weather warnings</li>
+<li>Current weather conditions</li>
+<li>Temperature</li>
+<li>Heat Index</li>
+<li>Wind reports</li>
+<li>Humidity</li>
+<li>Dew Point</li>
+<li>Visibility</li>
+<li>Pressure</li>
+</ol>
+<p>It is also capable of printing mesurements in Imperial and Metric units. I am also working on implementing 7-day forecasts.</p>
+<p>Currently, there are a couple of C conventions that <tt class="docutils literal">shaman</tt> does not adhere to (these are planned enhancements that I just need to learn before I can implement). These include native use of <tt class="docutils literal">libcurl</tt> rather than calling a shell and executing <tt class="docutils literal">curl</tt> itself, and using offsets in loops rather than using pointer arithmatic. I do, however, want to finish implementing my planned 7-day forecast feature so <tt class="docutils literal">shaman</tt> can be functionally complete for its first version before I go and start messing around with the backends that I don't fully understand.</p>
+<p>There is also one other possible feature that I am considering but I do not know if I will ever implement. If you have ever used the <tt class="docutils literal">date</tt> command or the backend which it utilizes called <tt class="docutils literal">strftime</tt>, then you are likely familiar with their format-code printing system. That is, you pass a string to <tt class="docutils literal">date</tt> which tells it what you want to see and how they should be printed and <tt class="docutils literal">date</tt> complies. Currently, <tt class="docutils literal">shaman</tt> prints information in a pre-formatted style that cannot be edited without editing source. After having released my code on github and publishing an announcement for the project on the <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=168620">Archlinux BBS</a>, it has been requested that I add a similar feature (this is something that <tt class="docutils literal">weatherman</tt> actually does too) so that a user may determine the exact output and format of the data which <tt class="docutils literal">shaman</tt> fetches. This would require a great increase of code but would make its use extremely versatile.</p>
+<p>Should 7-day forecasts go well, and the migration to <tt class="docutils literal">libcurl</tt> and pointer arithmatic go well, then this may very well become the last thing to implement before considering <tt class="docutils literal">shaman</tt> to be essentially feature-complete. In the meantime, I have plenty to keep me busy on this project.</p>
+        </div>
+        <div class="postbox">
         <h1><a href="posts/man-pages-a-how-to.html">Man Pages, a How-to</a>
         <small>  
              Posted: <time class="published" datetime="2013-07-20T10:39:54">2013-07-20 10:39</time>
