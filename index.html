@@ -24,7 +24,7 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -42,14 +42,14 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="archive.html">Archives</a>
-            </li><li><a href="categories/index.html">Tags</a>
+                <li><a href="archive.html">Archives</a>
+                </li><li><a href="categories/index.html">Tags</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
+                    <li>
                 </ul>
             </div>
         </div>
@@ -62,12 +62,34 @@
     <div class="span2"></div>
     <div class="span8">
     
-        <div class="postbox">
-        <h1><a href="posts/shaman-an-adventure-with-c.html">Shaman, an adventure with C</a>
+        <div class="postbox h-entry">
+        <h1 class="p-name"><a href="posts/shaman-revamped.html" class="u-url">Shaman, revamped!</a>
         <small>  
-             Posted: <time class="published" datetime="2013-08-29T19:30:44">2013-08-29 19:30</time>
+             Posted: <time class="published dt-published" datetime="2013-12-10T22:08:28+00:00">2013-12-10 22:08</time>
         </small></h1>
         <hr>
+        <div class="e-content">
+        <p>Upon looking back at my code of Shaman 1.x, I discovered that it was really quite disgusting. It was dense, difficult to read and poorly implemented. Furthermore, many of the conventions I used in the first version were entirely not portable and incredibly inefficient. So, I resolved, a couple of weeks ago, to begin work on the second major release which would fix essentially all of the problems 1.x experienced.</p>
+<p>First, and foremost, this means that the non-native C functions I used (namely curl and grep) had to be replaced by their native C counterparts. As a result, the work underway for <a class="reference external" href="https://github.com/HalosGhost/shaman">Shaman 2.x</a> will use a variety of libraries that the 1.x branch did not. Most obviously, this means it will link to libcurl rather than call curl inside a shell. Beyond the native implementations, the 2.x branch will be using much cleaner code conventions to complete the task delegated to it. The improvments in this area are clear everywhere. The following is a short list of all the improvments that users can expect:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://curl.haxx.se/libcurl/">libcurl</a> for native data fetching</li>
+<li>C's <a class="reference external" href="https://www.gnu.org/software/libc/manual/html_node/Getopt.html">getopt</a> for more sensible parsing of command-line arguments</li>
+<li><a class="reference external" href="http://www.xmlsoft.org/downloads.html">libxml2</a> instead of giant, disgusting and essentially obfuscated fscanfs for parsing the fetched data</li>
+<li><a class="reference external" href="http://www.hyperrealm.com/libconfig/">libconfig</a> for sensible configuration parsing</li>
+<li>General code cleanliness and conventions (like prototypes and declaring variables where needed; not all on the stack)</li>
+<li>strftime-like format string for simpler and more configurable output according to user-needs</li>
+</ul>
+<p>The end-result of this update will mean a few things. First of all, the final binary will certainly be a bit larger than 1.x. Having said that, it will run more efficiently, much faster and the weather data will be formatted exactly how users wish it to be which should mean easier parsing and more flexibility for a greater number of use-cases.</p>
+<p>Though the work on updating Shaman has really just begun, a great deal of it has been completed. Because I have never worked with any of the libraries mentioned above before, I suspect that the final project is still a way off. Still, development is active and you can follow my progress on my <a class="reference external" href="https://github.com/HalosGhost/">GitHub</a>. As always, pull requests, suggestions and feature requests will always be appreciated—though I would ask that everyone hold off on bug reports until the testing stage is reached.</p>
+        </div>
+        </div>
+        <div class="postbox h-entry">
+        <h1 class="p-name"><a href="posts/shaman-an-adventure-with-c.html" class="u-url">Shaman, an adventure with C</a>
+        <small>  
+             Posted: <time class="published dt-published" datetime="2013-08-29T19:30:44+00:00">2013-08-29 19:30</time>
+        </small></h1>
+        <hr>
+        <div class="e-content">
         <p>I have been proficient with scripting languages for a long while now, and once upon a time I knew something about Python (but that has long since been forgotten). Having switched to a very minimalist desktop environment (the whole thing with all my customizations is ~1500 sloc of C), and dealing with several C programs (along with having been made an <a class="reference external" href="https://github.com/TrilbyWhite/alopex.git">official contributor</a> to one of the projects written entirely in C), I felt it necessary for me to pick up one of the more universal languages and C seemed the obvious choice. I've messed around with a few small C programs as ways of getting my feet wet (i.e., <a class="reference external" href="https://github.com/HalosGhost/vulpes.git">vulpes</a>, <a class="reference external" href="https://github.com/HalosGhost/immio.git">immio</a>). However, a short while ago, I stumbled upon an awesome tool called <a class="reference external" href="http://darkhorse.nu/weatherman/">weatherman</a>, and it inspired me to begin working on an alternative written in C using the <a class="reference external" href="http://forecast.weather.gov">NOAA</a> as a backend rather than weatherbug.</p>
 <p>Thus was born, <a class="reference external" href="https://github.com/HalosGhost/shaman.git">shaman</a>. Originally, I really only wanted it to be able to fetch only the current conditions of a given location so that I could use it to display a relevant weather icon on my statusbar (using vulpes). But, as is the way with these projects, it evolved to also fetch temperature, and now, at the time of writing this post, <tt class="docutils literal">shaman</tt> is capable of fetching the following:</p>
 <ol class="arabic simple">
@@ -87,12 +109,14 @@
 <p>There is also one other possible feature that I am considering but I do not know if I will ever implement. If you have ever used the <tt class="docutils literal">date</tt> command or the backend which it utilizes called <tt class="docutils literal">strftime</tt>, then you are likely familiar with their format-code printing system. That is, you pass a string to <tt class="docutils literal">date</tt> which tells it what you want to see and how they should be printed and <tt class="docutils literal">date</tt> complies. Currently, <tt class="docutils literal">shaman</tt> prints information in a pre-formatted style that cannot be edited without editing source. After having released my code on github and publishing an announcement for the project on the <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=168620">Archlinux BBS</a>, it has been requested that I add a similar feature (this is something that <tt class="docutils literal">weatherman</tt> actually does too) so that a user may determine the exact output and format of the data which <tt class="docutils literal">shaman</tt> fetches. This would require a great increase of code but would make its use extremely versatile.</p>
 <p>Should 7-day forecasts go well, and the migration to <tt class="docutils literal">libcurl</tt> and pointer arithmatic go well, then this may very well become the last thing to implement before considering <tt class="docutils literal">shaman</tt> to be essentially feature-complete. In the meantime, I have plenty to keep me busy on this project.</p>
         </div>
-        <div class="postbox">
-        <h1><a href="posts/man-pages-a-how-to.html">Man Pages, a How-to</a>
+        </div>
+        <div class="postbox h-entry">
+        <h1 class="p-name"><a href="posts/man-pages-a-how-to.html" class="u-url">Man Pages, a How-to</a>
         <small>  
-             Posted: <time class="published" datetime="2013-07-20T10:39:54">2013-07-20 10:39</time>
+             Posted: <time class="published dt-published" datetime="2013-07-20T10:39:54+00:00">2013-07-20 10:39</time>
         </small></h1>
         <hr>
+        <div class="e-content">
         <p>One of the projects I have come to work with the most during my tenure using Arch Linux is <a class="reference external" href="https://github.com/TrilbyWhite/alopex.git">Alopex</a>. It is an extremely lightweight Window Manager (~1500 sloc, with no edits). It is, in many ways, similar to <a class="reference external" href="http://dwm.suckless.org/">dwm</a>. Like dwm, Alopex is written entirely in C and, as a result, essentially all its configuration options (of which there are plenty) are sourced at compile time. This leads to the whole window manager being in the neighborhood of 70 KiB (74 with all my customizations). When I first became interested in Alopex, the only documentation available was the generously-commented <tt class="docutils literal">config.h</tt> (the file inside which almost all user customizations reside). Partially to help contribute to this project as best I could, and partially to get comfortable editing and contributing to the (fabulous) <a class="reference external" href="https://wiki.archlinux.org">ArchWiki</a>, I created <a class="reference external" href="https://wiki.archlinux.org/index.php/Alopex">Alopex's ArchWiki page</a>. This, I would like to think, is a very helpful resource (particularly for Arch users). But, much of it is very focused on Arch Linux alone, and since Alopex is not a project explicitly meant for Arch (though all of its contributors are Arch users at the moment), I wanted to help provide documentation that would benefit anyone that might use Alopex.</p>
 <p>Thus, I began looking into writing man pages. For anyone who isn't aware, <tt class="docutils literal">man</tt> is a utility for reading "manual" pages provided by upstream projects. The ArchWiki might be nice, but it can be edited by anyone and there is no guarantee that it will stay up-to-date. Man pages, on the other hand, come directly from upstream (or from dedicated contributors), so they should always be the first source to consult. To accurately document Alopex, I felt I needed to create three pages.</p>
 <ol class="arabic simple">
@@ -125,15 +149,18 @@
 <p>While there are conventions for formatting various things (bold for commands and environment variables, italic for files, etc.), these are largely up to the man page author (though you should make sure that you're use of formatting is consistent throughout your writing, and following convention is a good idea). There are also various ways to format text, there are simple modifiers like <tt class="docutils literal">.TH</tt> and <tt class="docutils literal">.SH</tt> which will only affect text that follows on the same line, and there are also more complex modifiers that allow you to add them in-line to a paragraph. Personally, I tend to prefer the in-line versions so I do not have to deal with the disjointed nature of all the extra line-breaks.</p>
 <p>For a fabulous, in-depth walk-through of everything you could ever want to know about man pages, take a look at this <a class="reference external" href="http://www.schweikhardt.net/man_page_howto.html">page</a> by Jens Schweikhardt. And feel free to take a look at the pages I wrote and linked to above and use them as a starting point for your own projects.</p>
         </div>
-        <div class="postbox">
-        <h1><a href="posts/an-introduction.html">An Introduction</a>
+        </div>
+        <div class="postbox h-entry">
+        <h1 class="p-name"><a href="posts/an-introduction.html" class="u-url">An Introduction</a>
         <small>  
-             Posted: <time class="published" datetime="2013-07-17T14:37:09">2013-07-17 14:37</time>
+             Posted: <time class="published dt-published" datetime="2013-07-17T14:37:09+00:00">2013-07-17 14:37</time>
         </small></h1>
         <hr>
+        <div class="e-content">
         <p>Having used various GNU/Linux distros for several years, I have a rather hefty set of <a class="reference external" href="https://github.com/HalosGhost/.dotfiles">dotfiles</a> which you are more than welcome to clone/copy/share/etc. I maintain a few packages for Arch Linux on the <a class="reference external" href="https://aur.archlinux.org/packages/?SeB=m&amp;K=HalosGhost">AUR</a> and several others (including some works in-progress) on <a class="reference external" href="https://github.com/HalosGhost/Packages">GitHub</a>. I also do a bit of editing and contribution, when I can, to the <a class="reference external" href="https://wiki.archlinux.org">Arch Wiki</a> and I am a moderator for the <a class="reference external" href="https://plus.google.com/communities/113935870359973712582">Arch Linux Community</a> on Google+.</p>
 <p>You can follow me on <a class="reference external" href="https://plus.google.com/102862389160032018687">Google+</a> though I only post occasionally. And feel free to add me on <a class="reference external" href="http://steamcommunity.com/id/HalosGhost">Steam</a> (I won't accept blind invites; please message me first).</p>
 <p>This page will serve as a home base for whatever personal projects I am working on (and any professional ones should they ever overlap with the tech-focused paradigm of this site). I will do my best to keep it as up-to-date as possible, but I make no promises with respect to that. Eventually, who knows what it may become?</p>
+        </div>
         </div>
     
 <div>
@@ -142,9 +169,11 @@
 </div>
 
     
+        
        <script type="text/javascript">var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
 
-    
+
+	
 
 
     </div>
@@ -155,13 +184,22 @@
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License BY-SA" style="border-width:0;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png"></a> Contents © 2013 <a href="mailto:halosghost@archlinux.info">Sam Stuewe</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+	
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

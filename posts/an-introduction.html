@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="Sam Stuewe">
     <title>An Introduction | Consciousness Riven</title>
     
@@ -26,7 +25,7 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -44,18 +43,16 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="an-introduction.rst" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="an-introduction.rst" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,25 +66,31 @@
     <div class="span8">
     
     <div class="postbox">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>An Introduction</h1>
+    <h1 class="p-name" itemprop="headline name">An Introduction</h1>
 
     <hr>
     <small>
-        Posted: <time class="published" datetime="2013-07-17T14:37:09">2013-07-17 14:37</time>
+        Posted: <time class="published dt-published" datetime="2013-07-17T14:37:09+00:00" itemprop="datePublished">2013-07-17 14:37</time>
         
 
-        
+		
 
+          |  
+		
     </small>
     <hr>
+    <div class="e-content" itemprop="articleBody text">
     <p>Having used various GNU/Linux distros for several years, I have a rather hefty set of <a class="reference external" href="https://github.com/HalosGhost/.dotfiles">dotfiles</a> which you are more than welcome to clone/copy/share/etc. I maintain a few packages for Arch Linux on the <a class="reference external" href="https://aur.archlinux.org/packages/?SeB=m&amp;K=HalosGhost">AUR</a> and several others (including some works in-progress) on <a class="reference external" href="https://github.com/HalosGhost/Packages">GitHub</a>. I also do a bit of editing and contribution, when I can, to the <a class="reference external" href="https://wiki.archlinux.org">Arch Wiki</a> and I am a moderator for the <a class="reference external" href="https://plus.google.com/communities/113935870359973712582">Arch Linux Community</a> on Google+.</p>
 <p>You can follow me on <a class="reference external" href="https://plus.google.com/102862389160032018687">Google+</a> though I only post occasionally. And feel free to add me on <a class="reference external" href="http://steamcommunity.com/id/HalosGhost">Steam</a> (I won't accept blind invites; please message me first).</p>
 <p>This page will serve as a home base for whatever personal projects I am working on (and any professional ones should they ever overlap with the tech-focused paradigm of this site). I will do my best to keep it as up-to-date as possible, but I make no promises with respect to that. Eventually, who knows what it may become?</p>
+    </div>
+    </div>
     
     <ul class="pager">
         <li class="next">
-            <a href="man-pages-a-how-to.html">Next post →</a>
+            <a href="man-pages-a-how-to.html" rel="next">Next post →</a>
         </li>
     </ul>
 
@@ -103,13 +106,22 @@
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License BY-SA" style="border-width:0;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png"></a> Contents © 2013 <a href="mailto:halosghost@archlinux.info">Sam Stuewe</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+	
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>

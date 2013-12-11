@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta charset="utf-8">
-    <meta name="description" content="">
     <meta name="author" content="Sam Stuewe">
     <title>Man Pages, a How-to | Consciousness Riven</title>
     
@@ -26,7 +25,7 @@
 </head>
 <body>
 <!-- Menubar -->
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" id="navbar">
     <div class="navbar-inner">
         <div class="container">
 
@@ -44,18 +43,16 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     
-            <li><a href="../archive.html">Archives</a>
-            </li><li><a href="../categories/index.html">Tags</a>
+                <li><a href="../archive.html">Archives</a>
+                </li><li><a href="../categories/index.html">Tags</a>
 
                 </li></ul>
                 <ul class="nav pull-right">
                 
                 
-                    
-    <li>
-    <a href="man-pages-a-how-to.rst" id="sourcelink">Source</a>
-    </li>
-
+                    <li>
+			<a href="man-pages-a-how-to.rst" id="sourcelink">Source</a>
+		</li>
                 </ul>
             </div>
         </div>
@@ -69,18 +66,22 @@
     <div class="span8">
     
     <div class="postbox">
+    <div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
     
-    <h1>Man Pages, a How-to</h1>
+    <h1 class="p-name" itemprop="headline name">Man Pages, a How-to</h1>
 
     <hr>
     <small>
-        Posted: <time class="published" datetime="2013-07-20T10:39:54">2013-07-20 10:39</time>
+        Posted: <time class="published dt-published" datetime="2013-07-20T10:39:54+00:00" itemprop="datePublished">2013-07-20 10:39</time>
         
 
-        
+		
 
+          |  
+		
     </small>
     <hr>
+    <div class="e-content" itemprop="articleBody text">
     <p>One of the projects I have come to work with the most during my tenure using Arch Linux is <a class="reference external" href="https://github.com/TrilbyWhite/alopex.git">Alopex</a>. It is an extremely lightweight Window Manager (~1500 sloc, with no edits). It is, in many ways, similar to <a class="reference external" href="http://dwm.suckless.org/">dwm</a>. Like dwm, Alopex is written entirely in C and, as a result, essentially all its configuration options (of which there are plenty) are sourced at compile time. This leads to the whole window manager being in the neighborhood of 70 KiB (74 with all my customizations). When I first became interested in Alopex, the only documentation available was the generously-commented <tt class="docutils literal">config.h</tt> (the file inside which almost all user customizations reside). Partially to help contribute to this project as best I could, and partially to get comfortable editing and contributing to the (fabulous) <a class="reference external" href="https://wiki.archlinux.org">ArchWiki</a>, I created <a class="reference external" href="https://wiki.archlinux.org/index.php/Alopex">Alopex's ArchWiki page</a>. This, I would like to think, is a very helpful resource (particularly for Arch users). But, much of it is very focused on Arch Linux alone, and since Alopex is not a project explicitly meant for Arch (though all of its contributors are Arch users at the moment), I wanted to help provide documentation that would benefit anyone that might use Alopex.</p>
 <p>Thus, I began looking into writing man pages. For anyone who isn't aware, <tt class="docutils literal">man</tt> is a utility for reading "manual" pages provided by upstream projects. The ArchWiki might be nice, but it can be edited by anyone and there is no guarantee that it will stay up-to-date. Man pages, on the other hand, come directly from upstream (or from dedicated contributors), so they should always be the first source to consult. To accurately document Alopex, I felt I needed to create three pages.</p>
 <ol class="arabic simple">
@@ -112,10 +113,15 @@
 </table>
 <p>While there are conventions for formatting various things (bold for commands and environment variables, italic for files, etc.), these are largely up to the man page author (though you should make sure that you're use of formatting is consistent throughout your writing, and following convention is a good idea). There are also various ways to format text, there are simple modifiers like <tt class="docutils literal">.TH</tt> and <tt class="docutils literal">.SH</tt> which will only affect text that follows on the same line, and there are also more complex modifiers that allow you to add them in-line to a paragraph. Personally, I tend to prefer the in-line versions so I do not have to deal with the disjointed nature of all the extra line-breaks.</p>
 <p>For a fabulous, in-depth walk-through of everything you could ever want to know about man pages, take a look at this <a class="reference external" href="http://www.schweikhardt.net/man_page_howto.html">page</a> by Jens Schweikhardt. And feel free to take a look at the pages I wrote and linked to above and use them as a starting point for your own projects.</p>
+    </div>
+    </div>
     
     <ul class="pager">
         <li class="previous">
-            <a href="an-introduction.html">← Previous post</a>
+            <a href="an-introduction.html" rel="prev">← Previous post</a>
+        </li>
+        <li class="next">
+            <a href="shaman-an-adventure-with-c.html" rel="next">Next post →</a>
         </li>
     </ul>
 
@@ -131,13 +137,22 @@
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License BY-SA" style="border-width:0;" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png"></a> Contents © 2013 <a href="mailto:halosghost@archlinux.info">Sam Stuewe</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
 </div>
 
-
-
-            <script src="../assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+            <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
             <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 
 
-    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script>
+	
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+    $(window).on('hashchange', function(){
+        if (location.hash && $(location.hash)[0]) {
+            $('body').animate({scrollTop: $(location.hash).offset().top - $('#navbar').outerHeight(true)*1.2 }, 1);
+        }
+    });
+    $(document).ready(function(){$(window).trigger('hashchange')});
+    </script>
+    
+    
 </body>
 </html>
